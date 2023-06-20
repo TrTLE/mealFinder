@@ -1,5 +1,7 @@
 package com.example.mealfinder
 
+import android.app.ActivityOptions
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -37,9 +39,10 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-
-        encodeUrl()
-
+        val myIntent = Intent(this, RecipeDetailsActivity::class.java)
+        binding.recipeListBtn.setOnClickListener{
+            startActivity(myIntent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -62,11 +65,5 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
-    }
-
-    private fun encodeUrl() {
-        val url = "http://www.marmiton.org/recettes/recherche.aspx?"
-        val encodedUrl = URLEncoder.encode(url, "UTF-8")
-        println(encodedUrl)
     }
 }

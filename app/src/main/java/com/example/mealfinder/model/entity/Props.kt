@@ -1,4 +1,4 @@
-package com.example.mealfinder.model.json
+package com.example.mealfinder.model.entity
 
 import com.google.gson.annotations.SerializedName
 

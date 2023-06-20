@@ -1,6 +1,6 @@
 package com.example.mealfinder
 
-import com.example.mealfinder.model.json.RecipeClass
+import com.example.mealfinder.model.entity.RecipeClass
 import com.google.gson.Gson
 import org.jsoup.Jsoup
 import org.junit.Test
